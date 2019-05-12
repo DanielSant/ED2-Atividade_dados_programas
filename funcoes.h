@@ -7,7 +7,7 @@
 // PROTOTYPES--------------
 char menu(void);
 void carregar_file(FILE *file, struct dados_programa *armazem_dados);
-int error_msg(void);
+void error_msg(void);
 // ------------------------
 // DECLARATIONS------------
 char menu(void) {
@@ -21,25 +21,42 @@ char menu(void) {
 }
 
 void carregar_file(FILE *file, struct dados_programa *armazem_dados) {
-    
-    if (file != NULL) {
-        struct dados_programa temp;
-        char linha_completa[510];
-        char campo_linha[250];
-        int number_campo, posicao_caracter_linha;
-        int n=0;
 
-        while (fgets(linha_completa, 510, file) != NULL)
-        {
-            n++;
+    struct dados_programa temp;
+    char linha_completa[465] = "";
+    char campo_linha[250] = "";
+    int number_campo, posicao_caracter_linha;
+
+    printf("Cheguei aqui\n");
+    while (fgets(linha_completa, 465, file) != NULL) {
+        number_campo = 1;
+        posicao_caracter_linha = 0;
+        int tam_string = strlen(linha_completa);
+        while (posicao_caracter_linha <= tam_string) {
+            strcpy(campo_linha, " ");
+            while ((linha_completa[posicao_caracter_linha] < ';') || (linha_completa[posicao_caracter_linha] > ';') && (posicao_caracter_linha <= tam_string)) {
+                //printf("%c", linha_completa[posicao_caracter_linha]);
+                char aux[2] = "";
+                aux[0] = linha_completa[posicao_caracter_linha];
+                strcat(campo_linha, aux);
+                posicao_caracter_linha++;
+            }
+            posicao_caracter_linha++;
+            printf("%s\n", campo_linha);
+            switch (number_campo) {
+                case 1:
+                    strcpy(temp.cod_orgs, campo_linha);
+                     break;
+                            
+                default:
+                    break;
+            }
         }
-            printf("%d\n",n);
-    } else
-        error_msg();
+                        
+    }
 }
 
-int error_msg(void) {
-    printf("Not possible open file");
-    return 0;
+void error_msg(void) {
+    printf("Not possible open file\n");
 }
 // ------------------------
