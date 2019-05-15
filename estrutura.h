@@ -1,20 +1,20 @@
 struct dados_programa
 {
-    char cod_orgs[6];
+    char cod_orgs[30];
     char desc_orgs[60];
-    char id[6];
+    char id[30];
     char nome[250];
-    char situacao[15];
-    char data_disp[11];
-    char ano_disp[5];
-    char dt_ini_receb[11];
-    char dt_fim_receb[11];
-    char dt_ini_emenda_par[11];
-    char dt_fim_emenda_par[11];
-    char dt_ini_benef_esp[11];
-    char dt_fim_benef_esp[11];
-    char modalidade[20];
+    char situacao[30];
+    char data_disp[30];
+    char ano_disp[30];
+    char dt_ini_receb[30];
+    char dt_fim_receb[30];
+    char dt_ini_emenda_par[30];
+    char dt_fim_emenda_par[30];
+    char dt_ini_benef_esp[30];
+    char dt_fim_benef_esp[30];
+    char modalidade[30];
     char natureza_juridica[55];
-    char UF[3];
-    char acao_orcamento[10];
+    char UF[30];
+    char acao_orcamento[30];
 };
