@@ -1,4 +1,4 @@
-struct dados_programa
+typedef struct
 {
     char cod_orgs[30];
     char desc_orgs[60];
@@ -16,5 +16,5 @@ struct dados_programa
     char modalidade[30];
     char natureza_juridica[55];
     char UF[30];
-    char acao_orcamento[30];
-};
+    char acao_orcamento[100];
+}dados_programa;
