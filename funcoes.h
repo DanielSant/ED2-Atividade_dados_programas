@@ -127,7 +127,7 @@ void error_msg(void) {
 }
 
 void exibir(dados_programa dados[]) {
-    for(int i = 1; i<91000; i++) {
+    for(int i = 1; i<10; i++) {
         printf("=--------------------------------------------------------------=\n\n");
         printf("%s: %s\n",dados[0].cod_orgs, dados[i].cod_orgs);
         printf("%s: %s\n",dados[0].desc_orgs, dados[i].desc_orgs);
@@ -190,7 +190,7 @@ void novos_cadastros(dados_programa *temp) {
 void gravar_alteracoes(FILE *file, dados_programa dados[], dados_programa aux) {
 
     for (int i=0; i<91000; i++) {
-        fprintf(file,"%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s",dados[i].cod_orgs,";",
+        fprintf(file,"%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s",dados[i].cod_orgs,";",
             dados[i].desc_orgs,";",dados[i].id,";",dados[i].nome,";",dados[i].situacao,";",dados[i].data_disp,";",
             dados[i].ano_disp,";",dados[i].dt_ini_receb,";",dados[i].dt_fim_receb,";",dados[i].dt_ini_emenda_par,";",
             dados[i].dt_fim_emenda_par,";",dados[i].dt_ini_benef_esp,";",dados[i].dt_fim_benef_esp,";",dados[i].modalidade,";",
@@ -212,22 +212,10 @@ void gravar_alteracoes(FILE *file, dados_programa dados[], dados_programa aux) {
         fprintf(file,"%s%s",dados[i].UF,";");
         fprintf(file,"%s",dados[i].acao_orcamento);*/
     }
-    fprintf(file,"%s%s",aux.cod_orgs,";");
-    fprintf(file,"%s%s",aux.desc_orgs,";");
-    fprintf(file,"%s%s",aux.id,";");
-    fprintf(file,"%s%s",aux.nome,";");
-    fprintf(file,"%s%s",aux.situacao,";");
-    fprintf(file,"%s%s",aux.data_disp,";");
-    fprintf(file,"%s%s",aux.ano_disp,";");
-    fprintf(file,"%s%s",aux.dt_ini_receb,";");
-    fprintf(file,"%s%s",aux.dt_fim_receb,";");
-    fprintf(file,"%s%s",aux.dt_ini_emenda_par,";");
-    fprintf(file,"%s%s",aux.dt_fim_emenda_par,";");
-    fprintf(file,"%s%s",aux.dt_ini_benef_esp,";");
-    fprintf(file,"%s%s",aux.dt_fim_benef_esp,";");
-    fprintf(file,"%s%s",aux.modalidade,";");
-    fprintf(file,"%s%s",aux.natureza_juridica,";");
-    fprintf(file,"%s%s",aux.UF,";");
-    fprintf(file,"%s%s",aux.acao_orcamento,"\n");
+    fprintf(file,"%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s",aux.cod_orgs,";",
+            aux.desc_orgs,";",aux.id,";",aux.nome,";",aux.situacao,";",aux.data_disp,";",
+            aux.ano_disp,";",aux.dt_ini_receb,";",aux.dt_fim_receb,";",aux.dt_ini_emenda_par,";",
+            aux.dt_fim_emenda_par,";",aux.dt_ini_benef_esp,";",aux.dt_fim_benef_esp,";",aux.modalidade,";",
+            aux.natureza_juridica,";",aux.UF,";",aux.acao_orcamento);
 }
 // ------------------------
